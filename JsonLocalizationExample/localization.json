@@ -1,0 +1,16 @@
+﻿[
+  {
+    "Key": "Hello",
+    "Value": {
+      "en-GB": "Hello",
+      "zh-TW": "你好"
+    }
+  },
+  {
+    "Key": "Language",
+    "Value": {
+      "en-GB": "Language",
+      "zh-TW": "語言"
+    }
+  }
+]
