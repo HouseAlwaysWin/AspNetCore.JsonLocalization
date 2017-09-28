@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JsonLocalization
+namespace AspNetCore.JsonLocalization
 {
     /// <summary>
     /// Extension methods for setting up localization services in an <see cref="IServiceCollection" />.

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JsonLocalization\JsonLocalization.csproj" />
+    <ProjectReference Include="..\AspNetCore.JsonLocalization\AspNetCore.JsonLocalization.csproj" />
   </ItemGroup>
 
 </Project>

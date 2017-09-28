@@ -7,17 +7,29 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace JsonLocalization
+namespace AspNetCore.JsonLocalization
 {
     public class JsonResourceStringLocalizer : IStringLocalizer
     {
         List<JsonLocalizationFormat> localization = new List<JsonLocalizationFormat>();
-        public JsonResourceStringLocalizer()
+        private readonly string _resourcesRelativePath;
+        public JsonResourceStringLocalizer(string resourcesRelativePath)
         {
             //read all json file
             JsonSerializer serializer = new JsonSerializer();
-            localization = JsonConvert.DeserializeObject<List<JsonLocalizationFormat>>(
-                File.ReadAllText(@"localization.json"));
+            _resourcesRelativePath = resourcesRelativePath;
+
+            if (!String.IsNullOrWhiteSpace(_resourcesRelativePath))
+            {
+                var resourcePath = resourcesRelativePath + "\\localization.json";
+                localization = JsonConvert.DeserializeObject<List<JsonLocalizationFormat>>(
+                    File.ReadAllText(resourcePath));
+            }
+            else
+            {
+                localization = JsonConvert.DeserializeObject<List<JsonLocalizationFormat>>(
+                    File.ReadAllText(@"localization.json"));
+            }
 
         }
 
@@ -56,7 +68,7 @@ namespace JsonLocalization
 
         public IStringLocalizer WithCulture(CultureInfo culture)
         {
-            return new JsonResourceStringLocalizer();
+            return new JsonResourceStringLocalizer(_resourcesRelativePath);
         }
 
         private string GetString(string name)

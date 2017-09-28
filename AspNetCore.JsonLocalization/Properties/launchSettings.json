@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "JsonLocalization": {
+      "commandName": "Project"
+    },
+    "AspNetCore.JsonLocalization": {
+      "commandName": "Executable"
+    }
+  }
+}

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using JsonLocalization;
+using AspNetCore.JsonLocalization;
 using System.Globalization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Localization;
@@ -19,7 +19,6 @@ namespace JsonLocalizationExample
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -27,14 +26,9 @@ namespace JsonLocalizationExample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddJsonLocalization(opts =>
-            //{
-            //    opts.ResourcesPath = "Resources";
-            //});
-
             services.AddJsonLocalization(opts =>
             {
-                opts.ResourcesPath = "Resources";
+                opts.ResourcesPath = "Resource";
             });
 
             services.Configure<RequestLocalizationOptions>(opts =>
@@ -52,11 +46,7 @@ namespace JsonLocalizationExample
 
             services.AddMvc()
                 .AddViewLocalization(
-                LanguageViewLocationExpanderFormat.Suffix,
-                opts =>
-                {
-                    opts.ResourcesPath = "Resources";
-                })
+                LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
         }
 
