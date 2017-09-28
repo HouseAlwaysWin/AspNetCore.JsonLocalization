@@ -2,11 +2,11 @@
 
 ## Installation
 
-For Package Manager Add <strong>Install-Package AspNetCore.JsonLocalization </strong>
+For Package Manager  <strong>Install-Package AspNetCore.JsonLocalization </strong>
 <br/>
 or
 <br/>
-For .NET CLI Add <strong>dotnet add package AspNetCore.JsonLocalization</strong>
+For .NET CLI  <strong>dotnet add package AspNetCore.JsonLocalization</strong>
 
 ## Introduction
 
