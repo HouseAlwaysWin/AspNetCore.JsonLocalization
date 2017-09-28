@@ -1,4 +1,12 @@
-# JsonLocalization
+# AspNetCore.JsonLocalization
+
+## Installation
+
+For Package Manager Add <strong>Install-Package AspNetCore.JsonLocalization </strong>
+<br/>
+or
+<br/>
+For .NET CLI Add <strong>dotnet add package AspNetCore.JsonLocalization</strong>
 
 ## Introduction
 
@@ -19,10 +27,7 @@ Add middleware in your Startup:
 ```c#
  public void ConfigureServices(IServiceCollection services)
         {
-            services.AddJsonLocalization(opts =>
-            {
-                opts.ResourcesPath = "Resources";
-            });
+            services.AddJsonLocalization();
 
             services.Configure<RequestLocalizationOptions>(opts =>
             {
@@ -42,7 +47,8 @@ Add middleware in your Startup:
                 LanguageViewLocationExpanderFormat.Suffix,
                 opts =>
                 {
-                    opts.ResourcesPath = "Resources";
+                 // your json resource path,if it's empty than just add localization.json under your project;otherwise, add localization.json under your resource path
+                    opts.ResourcesPath = "Resources"; 
                 })
                 .AddDataAnnotationsLocalization();
         }
@@ -79,7 +85,7 @@ and
         }
 ```
 
-and add localization.json file in your project:
+and add localization.json file in under your resource path:
 
 ```json 
 [
