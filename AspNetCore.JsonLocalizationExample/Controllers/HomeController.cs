@@ -8,6 +8,7 @@ using JsonLocalizationExample.Models;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using AspNetCore.JsonLocalizationExample.Models;
 
 namespace JsonLocalizationExample.Controllers
 {
@@ -21,6 +22,17 @@ namespace JsonLocalizationExample.Controllers
         public IActionResult Index()
         {
             ViewData["Hello"] = localizer["Hello"];
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(FormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             return View();
         }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>JsonLocalization</id>
+    <id>AspNetCore.JsonLocalization</id>
     <version>1.0.0</version>
-    <title>JsonLocalization</title>
+    <title>AspNetCore.JsonLocalization</title>
     <authors>Martin Wang</authors>
     <owners>Martin Wang</owners>
-    <licenseUrl>https://raw.githubusercontent.com/HouseAlwaysWin/JsonLocalization/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/HouseAlwaysWin/JsonLocalization</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/HouseAlwaysWin/AspNetCore.JsonLocalization/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/HouseAlwaysWin/AspNetCore.JsonLocalization</projectUrl>
     <iconUrl>https://nuget.org/Content/gallery/img/default-package-icon.svg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Json Localization middleware</description>
@@ -21,7 +21,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\netstandard1.6\JsonLocalization.dll" target="lib\netstandard1.6" />
-    <file src="bin\Release\netstandard2.0\JsonLocalization.dll" target="lib\netstandard2.0" />
+    <file src="bin\Release\netstandard1.6\AspNetCore.JsonLocalization.dll" target="lib\netstandard1.6" />
+    <file src="bin\Release\netstandard2.0\AspNetCore.JsonLocalization.dll" target="lib\netstandard2.0" />
   </files>
 </package>

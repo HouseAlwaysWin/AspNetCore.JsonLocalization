@@ -1,3 +1,13 @@
-﻿
+﻿@model FormModel
 
 @ViewData["Hello"]
+
+<form asp-action="Index" asp-controller="Home" asp-antiforgery="true" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>

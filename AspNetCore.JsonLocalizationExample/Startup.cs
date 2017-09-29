@@ -28,7 +28,7 @@ namespace JsonLocalizationExample
         {
             services.AddJsonLocalization(opts =>
             {
-                opts.ResourcesPath = "Resource";
+                opts.ResourcesPath = "Resources";
             });
 
             services.Configure<RequestLocalizationOptions>(opts =>
