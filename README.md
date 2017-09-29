@@ -10,7 +10,7 @@ For .NET CLI  <strong>dotnet add package AspNetCore.JsonLocalization</strong>
 
 ## Introduction
 
-Since I don't like use resource file to localize asp.net core mvc application 
+Since I don't like to use localization with resource file in asp.net core mvc application 
 <br/>
 so I tried to find the other formats for more easy way to use.
 <br/>
