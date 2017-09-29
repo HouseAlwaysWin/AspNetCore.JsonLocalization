@@ -110,7 +110,7 @@ Done, now you can use localizer in your controller or view
 
 <hr/>
 
-By the way,you can localize your display attribute and error message with your dataannotation,for example:
+With this approach,you can localize your display attribute and error message with your dataannotation,for example:
 
 ```c#
  public class FormModel
