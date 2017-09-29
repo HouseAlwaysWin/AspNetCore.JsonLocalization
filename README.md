@@ -107,3 +107,35 @@ and add localization.json file in under your resource path:
 ```
 
 Done, now you can use localizer in your controller or view
+
+<hr/>
+
+By the way,you can localize your display attribute and error message with your dataannotation,for example:
+
+```c#
+ public class FormModel
+    {
+        [Required(ErrorMessage = "Name_Required_MSG")] // with key word
+        [Display(Name = "Name")] // with key word
+        public string Name { get; set; }
+    }
+```
+
+and add key word in your json file
+
+```json
+{
+    "Key": "Name",
+    "Value": {
+      "en-GB": "Name",
+      "zh-TW": "名稱"
+    }
+  },
+  {
+    "Key": "Name_Required_MSG",
+    "Value": {
+      "en-GB": "Name can't be empty",
+      "zh-TW": "名稱不能空白"
+    }
+  }
+```
