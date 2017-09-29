@@ -47,7 +47,7 @@ Add middleware in your Startup:
                 LanguageViewLocationExpanderFormat.Suffix,
                 opts =>
                 {
-                 // your json resource path,if it's empty than just add localization.json under your project;otherwise, add localization.json under your resource path
+                 // your json resource path,if it's empty then just add localization.json under your project;otherwise, add localization.json under your resource path
                     opts.ResourcesPath = "Resources"; 
                 })
                 .AddDataAnnotationsLocalization();
