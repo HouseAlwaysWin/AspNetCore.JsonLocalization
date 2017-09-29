@@ -1,8 +1,16 @@
-# JsonLocalization
+# AspNetCore.JsonLocalization
+
+## Installation
+
+For Package Manager  <strong>Install-Package AspNetCore.JsonLocalization </strong>
+<br/>
+or
+<br/>
+For .NET CLI  <strong>dotnet add package AspNetCore.JsonLocalization</strong>
 
 ## Introduction
 
-Since I don't like use resource file to localize asp.net core mvc application 
+Since I don't like to use localization with resource file in asp.net core mvc application 
 <br/>
 so I tried to find the other formats for more easy way to use.
 <br/>
@@ -19,10 +27,7 @@ Add middleware in your Startup:
 ```c#
  public void ConfigureServices(IServiceCollection services)
         {
-            services.AddJsonLocalization(opts =>
-            {
-                opts.ResourcesPath = "Resources";
-            });
+            services.AddJsonLocalization();
 
             services.Configure<RequestLocalizationOptions>(opts =>
             {
@@ -42,7 +47,8 @@ Add middleware in your Startup:
                 LanguageViewLocationExpanderFormat.Suffix,
                 opts =>
                 {
-                    opts.ResourcesPath = "Resources";
+                 // your json resource path,if it's empty then just add localization.json under your project;otherwise, add localization.json under your resource path
+                    opts.ResourcesPath = "Resources"; 
                 })
                 .AddDataAnnotationsLocalization();
         }
@@ -79,7 +85,7 @@ and
         }
 ```
 
-and add localization.json file in your project:
+and add localization.json file in under your resource path:
 
 ```json 
 [
@@ -101,3 +107,35 @@ and add localization.json file in your project:
 ```
 
 Done, now you can use localizer in your controller or view
+
+<hr/>
+
+By the way,you can localize your display attribute and error message with your dataannotation,for example:
+
+```c#
+ public class FormModel
+    {
+        [Required(ErrorMessage = "Name_Required_MSG")] // with key word
+        [Display(Name = "Name")] // with key word
+        public string Name { get; set; }
+    }
+```
+
+and add key word in your json file
+
+```json
+{
+    "Key": "Name",
+    "Value": {
+      "en-GB": "Name",
+      "zh-TW": "名稱"
+    }
+  },
+  {
+    "Key": "Name_Required_MSG",
+    "Value": {
+      "en-GB": "Name can't be empty",
+      "zh-TW": "名稱不能空白"
+    }
+  }
+```
