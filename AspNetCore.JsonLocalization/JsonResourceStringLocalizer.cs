@@ -11,12 +11,12 @@ namespace AspNetCore.JsonLocalization
 {
     public class JsonResourceStringLocalizer : IStringLocalizer
     {
-        List<JsonLocalizationFormat> localization = new List<JsonLocalizationFormat>();
+        List<JsonLocalizationFormat> localization;
         private readonly string _resourcesRelativePath;
+
         public JsonResourceStringLocalizer(string resourcesRelativePath)
         {
             //read all json file
-            JsonSerializer serializer = new JsonSerializer();
             _resourcesRelativePath = resourcesRelativePath;
 
             if (!String.IsNullOrWhiteSpace(_resourcesRelativePath))
