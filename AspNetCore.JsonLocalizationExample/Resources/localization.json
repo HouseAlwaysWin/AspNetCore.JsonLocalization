@@ -1,0 +1,30 @@
+﻿[
+  {
+    "Key": "Hello",
+    "Value": {
+      "en-GB": "Hello",
+      "zh-TW": "你好"
+    }
+  },
+  {
+    "Key": "Language",
+    "Value": {
+      "en-GB": "Language",
+      "zh-TW": "語言"
+    }
+  },
+  {
+    "Key": "Name",
+    "Value": {
+      "en-GB": "Name",
+      "zh-TW": "名稱"
+    }
+  },
+  {
+    "Key": "Name_Required_MSG",
+    "Value": {
+      "en-GB": "Name can't be empty",
+      "zh-TW": "名稱不能空白"
+    }
+  }
+]
